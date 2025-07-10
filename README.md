@@ -10,7 +10,7 @@
 - 🔍 Search and filter destinations based on user preferences
 - 🛒 Book trips and manage itineraries
 - 📱 Fully responsive design for mobile, tablet, and desktop
-- 🔐 Secure user authentication *(if applicable)*
+- 🔐 Secure user authentication
 
 ---
 
