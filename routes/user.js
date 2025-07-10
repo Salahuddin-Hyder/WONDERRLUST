@@ -1,0 +1,48 @@
+const express = require("express")
+const router = express.Router(); 
+const User = require("../models/user.js");
+const { ref } = require("joi");
+const passport = require("passport");
+const { savedUrl } = require("../middleware.js");
+
+router.get("/signup", (req,res)=>{
+    res.render("listings/signup.ejs")
+})
+router.post("/signup", async (req,res)=>{
+    let {username, email, password} = req.body;
+    const newUser = new User ({username, email})
+    try {
+         const registeredUser = await User.register(newUser, password)
+    req.login(registeredUser, (err)=>{
+        if(err){
+            return next(err)
+        }
+         req.flash("success", "welcome to Wonderlust")
+    res.redirect("/listings")
+    })
+        } catch (error) {
+        req.flash("error", error.message)
+        res.redirect("/signup")
+    }
+    
+});
+router.get("/login", (req, res)=>{
+    res.render("listings/login.ejs")
+});
+router.post("/login", savedUrl, passport.authenticate("local", {failureRedirect: "/login", failureFlash: true,}), (req, res)=>{
+   req.flash("success", `Successfully Logged In, Welcome to Wonderlust ${req.user.username}`) // to display user name in flash message 
+    let redirectUrl = res.locals.redirectUrl || "/listings" // for redirect into the addlisting page from where the user logged In 
+    res.redirect(redirectUrl)                               // midddleware used savedUrl
+});
+router.get("/logout", (req, res, next)=>{
+    req.logout((err)=>{
+        if(err){
+        return next(err);
+        }
+        req.flash("success","you are logged Out")
+        res.redirect("/listings")
+    })
+})
+
+module.exports = router
+

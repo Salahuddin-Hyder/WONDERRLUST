@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+.container{
+    flex: 1;
+}
+ 
+.navbarbrand{
+    color: #fe424d;
+    font-size: 3rem;
+}
+.navbar{
+    height: 5rem;
+    
+}
+.nav-link{
+    color: #222222 !important;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+.f-info-links{
+    text-decoration: none;
+    width: 100%;
+}
+.f-socials{
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+}
+.f-socials i {
+    margin-right: 1rem;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-img-overlay{
+    opacity: 0;
+} 
+.card-img-overlay:hover{
+    opacity: 0.3;
+    background-color: white;
+}
+.listing-link{
+    text-decoration: none;
+}
+button{
+    background-color: #ff5a5f;
+    border: none;
+ }
+ .btns{
+    display: flex;
+    flex-direction: row;
+ }
+ #LoginBtn{
+    background-color: #fc642d;   
+    width: 60%;
+    border-radius: 5px 5px 5px 5px;
+    align-self: center;
+ }
+#LoginBtn:hover{
+    background-color: #ff5a5f 
+}
