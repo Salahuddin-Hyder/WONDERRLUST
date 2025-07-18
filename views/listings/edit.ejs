@@ -4,7 +4,7 @@
     <div class="row"> 
         <div class="col-8 offset-2"> 
     <h3>UPDATE LISTING</h3> 
-    <form method="post" action="/listings/<%= listing._id %>?_method=put" class="needs-validation"   > 
+    <form method="post" action="/listings/<%= listing._id %>?_method=put" class="needs-validation" enctype="multipart/form-data"  > 
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
     <input type="text" name="listing[title]"  class="form-control" value="<%= listing.title %>"  >
@@ -17,7 +17,7 @@
     </div>
     <div>
         <label for="image" class="form-label">Image</label>
-        <input name="listing[image]" placeholder="image URL/Link" class="form-control" value="<%= listing.image %>">
+        <input name="listing[image]" placeholder=" Upload image" type="file" class="form-control" value="<%= listing.image %>">
     </div>
     <div class="row">
         <div class="mb-3 col-md-4">

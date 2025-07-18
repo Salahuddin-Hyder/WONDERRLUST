@@ -7,11 +7,8 @@ const listingSchema  = new Schema({
  title: String,
     description: String,
     image: {
-        type: String,
-        set: (v)=> 
-            v === "" 
-            ? "https://unsplash.com/photos/white-concrete-building-with-swimming-pool-y3_AHHrxUBY" 
-            : v,
+        url: String,
+        filename: String
     },
      price: Number,
      location: String,

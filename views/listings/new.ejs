@@ -4,7 +4,7 @@
     <div class="row"> 
         <div class="col-8 offset-2"> 
     <h3>ADD NEW LISTING</h3> 
-    <form method="post" action="/listings"  class="needs-validation" >   
+    <form method="post" action="/listings"  class="needs-validation" enctype="multipart/form-data">   
 
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -17,8 +17,8 @@
         <textarea name="listing[description]" placeholder="enter description" class="form-control" required></textarea> 
     </div>
     <div>
-        <label for="image" class="form-label">Image</label>
-        <input name="listing[image]" placeholder="image URL/Link" class="form-control">
+        <label for="image" class="form-label">Upload Image</label>
+        <input name="listing[image]" type="file"  class="form-control">
     </div>
     <div class="row">
         <div class="mb-3 col-md-4">

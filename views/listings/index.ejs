@@ -1,7 +1,7 @@
  <% layout("/layouts/boilerplate") %>
  <%= success %>
     <h3>ALL LISTINGS</h3>
-    <h5>Replica Created By Salahuddin Hyder</h5>
+    <!-- <h5>Replica Created By Salahuddin Hyder</h5> -->
  <!-- <form method="get" action="/listings/new"> 
         <button>ADD NEW LISTING</button>
     </form> -->
@@ -10,7 +10,7 @@
             <a href="/listings/<%= listing._id%>" class="listing-link"> 
               <div class="card listing-card" style="width: 18rem;">
                 <img 
-                src="<%= listing.image %>" 
+                src="<%= listing.image.url %>" 
                 class="card-img-top"
                  alt="listing_img" 
                  style = "height: 20rem"
