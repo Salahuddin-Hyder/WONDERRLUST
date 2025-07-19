@@ -7,6 +7,7 @@ module.exports.index = async(req, res)=>{
 };
 module.exports.renderNewListingForm =  (req, res)=>{
   res.render("listings/new.ejs")
+
 };
 module.exports.newListingPost =  async (req, res)=>{
   let url = req.file.path;
@@ -47,7 +48,9 @@ module.exports.editformRendering = async(req, res)=>{
     req.flash("error"," Listing you are trying to access is not available")
    return res.redirect("/listings")
   }
-  res.render("listings/edit.ejs", {listing})
+  let originalImage = listing.image.url
+   originalImage = originalImage.replace("/upload", "/upload/ar_1.0,c_thumb,g_face,w_0.6,z_0.7/r_max/co_black,e_outline/co_dimgrey,x_30,y_40")
+  res.render("listings/edit.ejs", {listing, originalImage})
 };
 module.exports.deleteOrDestroyListing = async (req, res)=>{
   let {id} = req.params

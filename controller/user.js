@@ -4,6 +4,7 @@ const userRoute = require("../routes/user.js");
 
 module.exports.signUpGet = (req,res)=>{
     res.render("listings/signup.ejs")
+   
 };
 
 module.exports.signUpPost = async (req,res)=>{

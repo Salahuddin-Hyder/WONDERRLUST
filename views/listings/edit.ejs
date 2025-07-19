@@ -16,6 +16,9 @@
         <textarea name="listing[description]"  class="form-control"  >"<%= listing.description %>"</textarea> 
     </div>
     <div>
+        <img src= "<%= originalImage%>" alt="">
+    </div>
+    <div>
         <label for="image" class="form-label">Image</label>
         <input name="listing[image]" placeholder=" Upload image" type="file" class="form-control" value="<%= listing.image %>">
     </div>

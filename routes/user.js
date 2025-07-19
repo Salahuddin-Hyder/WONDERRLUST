@@ -5,8 +5,11 @@ const { ref } = require("joi");
 const passport = require("passport");
 const { savedUrl } = require("../middleware.js");
 const userController = require("../controller/user.js")
+const multer  = require('multer')
+const {storage} = require("../cloudConfig.js")
+const upload = multer({ storage })
 
-router.get("/signup",  userController.signUpGet)
+router.get("/signup", userController.signUpGet)
 router.post("/signup",  userController.signUpPost);
 router.get("/login",  userController.loginGet);
 router.post("/login", savedUrl, passport.authenticate("local", {failureRedirect: "/login", failureFlash: true,}),  userController.loginPost);

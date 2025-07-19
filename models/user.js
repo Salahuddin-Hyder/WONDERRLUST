@@ -7,7 +7,8 @@ const userSchema = new Schema({
     email : {
         type: String,
         required: true
-    }
+    },
+   
 })
 userSchema.plugin(passportLocalMongoose, {usernameFied: "email"})
 
